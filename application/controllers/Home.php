@@ -22,17 +22,27 @@ class Home extends CI_Controller {
 			$user->is_admin = $this->ion_auth->is_admin();
 			$this->twig->addGlobal( "user",  $user );
 		}
+		$this->load->helper('url');
 	}
-	
+
 	public function index()
 	{
+
+
 		$this->twig->addGlobal( "title", "Certified Adventist Resources, Culturally Relevant" );
 		$this->twig->addGlobal( "is_home", true );
 		$this->twig->addGlobal( "breadcrumbs", $this->breadcrumbs );
+
 		$data = [
 			"message" => $this->session->flashdata('message'),
 		];
+		
+		$translated = $this->session->userdata('_T');
+
+		$this->twig->addGlobal( "_L" , $translated);
+
 		$this->twig->display( "twigs/home", $data );
+		
 	}
 	
 	public function feedback()

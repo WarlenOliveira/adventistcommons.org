@@ -49,6 +49,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+
+// Define your locale format: en-US, es-AR, etc
+//define('LOCALE_FORMAT', '([a-z|A-Z]{2})');
+
+// Sets the URI_LOCALE constant required for localization to be read by Controllers
+/*function handle_locale($locale, $route='')
+{
+    define('URI_LOCALE', $locale);
+    return $route;
+};*/
+
+//$route[LOCALE_FORMAT] = function ($locale) { return handle_locale($locale); };
+
 $route['default_controller'] = 'home';
 $route['feedback'] = 'home/feedback';
 $route['login'] = 'user/login';
@@ -65,3 +78,6 @@ $route['account/save_password'] = 'user/save_password';
 $route['editor/(:num)/(:num)'] = 'editor/index/$1/$2';
 $route['editor/(:num)/(:num)'] = 'editor/index/$1/$2';
 $route['404_override'] = '';
+$route['langswitch/(:any)'] = 'langswitch/switchlanguage/$1';
+
+//$route[LOCALE_FORMAT . '/(.+)$'] = function ($locale, $route) { return handle_locale($locale, $route); };

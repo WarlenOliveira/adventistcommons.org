@@ -37,6 +37,20 @@
 						</div>
 					{% else %}
 						<ul class="navbar-nav">
+						<li class="nav-item">
+										<div class="dropdown nav-link">
+											
+												<i class="material-icons "  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">language</i>
+											
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+												<a class="dropdown-item locale-select" data-id="en" >English</a>
+												<a class="dropdown-item locale-select" data-id="es" >Español</a>
+												<a href='langswitch/switchLanguage/spanish'>ESPAÑOL 2</a>
+
+
+											</div>
+										</div>
+									</li>
 							<li class="nav-item">
 								<a class="nav-link" href="/login">Login</a>
 							</li>
@@ -85,6 +99,20 @@
 							{% else %}
 								<ul class="navbar-nav">
 									<li class="nav-item">
+										<div class="dropdown nav-link">
+											
+												<i class="material-icons "  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">language</i>
+											
+											<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+												<a class="dropdown-item" href='langswitch/en'>English</a>
+												<a class="dropdown-item" href='langswitch/es'>Spanish</a>
+												
+
+
+											</div>
+										</div>
+									</li>
+									<li class="nav-item">
 										<a class="nav-link" href="/login">Login</a>
 									</li>
 									<li class="nav-item">
@@ -100,9 +128,9 @@
 				{% if is_home %}
 					<div class="jumbotron jumbotron-fluid bg-dark mb-0 banner">
 						<div class="container">
-							<h1 class="display-4">Free Adventist Resources<br><span style="color:#f9dc90">Culturally Relevant</span></h1>
-							<p class="lead">Certified, Translatable, Printable, Sharable.</p>
-							<a href="/projects" class="btn btn-light mb-5">Get Started</a>
+							<h1 class="display-4">{{_L.landing.title}}<br><span style="color:#f9dc90">{{_L.landing.subtitle}}</span></h1>
+							<p class="lead">{{_L.landing.slogan}}</p>
+							<a href="/projects" class="btn btn-light mb-5">{{_L.landing.get_started}}</a>
 						</div>
 					</div>	
 					<div class="breadcrumb-bar navbar bg-white" style="min-height:20px"></div>
