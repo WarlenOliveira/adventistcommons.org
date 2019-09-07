@@ -98,9 +98,10 @@ $config['charset'] = 'UTF-8';
 |
 | If you would like to use the 'hooks' feature you must enable it by
 | setting this variable to TRUE (boolean).  See the user guide for details.
+| Set it true in order to allow Sentry to work.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
