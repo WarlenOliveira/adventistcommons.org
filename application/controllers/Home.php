@@ -37,7 +37,6 @@ class Home extends CI_Controller {
 		$data = [
 			"message" => $this->session->flashdata('message'),
 		];
-		echo $data[2];
 		$this->twig->display( "twigs/home", $data );
 	}
 	
@@ -81,3 +80,4 @@ EOT;
 		$this->output->set_output( json_encode( [ "success" => "Thanks! Feedback has been sent.", "redirect" => "/", "redirect_delay" => 2000 ] ) );
 	}
 }
+
